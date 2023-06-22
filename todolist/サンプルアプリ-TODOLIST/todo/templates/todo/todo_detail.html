@@ -1,0 +1,40 @@
+{% extends 'todo/base.html' %}
+
+{% block header %}
+<h1>Todo Detail</h1>
+{% endblock header %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <table>
+            <tr>
+                <th>
+                    <h2 >タイトル:</h2>
+                </th>
+                <th>
+                    <h2>{{task.title}}</h2>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <h2>内容:</h2>
+                </th>
+                <th>
+                    <h2>{{task.content}}</h2>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <h2>期限:</h2>
+                </th>
+                <th>
+                    <h2>{{task.term}}</h2>
+                </th>
+            </tr>
+        </table>
+        <div>
+    </div>
+</div>
+<a class="btn btn-outline-secondary mt-2" href="{% url 'list' %}" role="button">戻る</a>
+{% endblock content %}

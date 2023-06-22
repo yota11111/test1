@@ -1,0 +1,29 @@
+{% extends 'todo/base.html' %}
+
+
+{% block content %}
+<h1>TODO LIST</h1>
+<div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">タスク</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>
+                <a href="{% url 'detail' task.pk %}">Detail</a>
+                <a href="{% url 'update' task.pk %}">Update</a>
+                <a href="{% url 'delete' task.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="{% url 'create' %}">Insert</a>
+</div>
+
+{% endblock content %}
